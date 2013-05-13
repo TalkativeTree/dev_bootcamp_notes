@@ -287,7 +287,7 @@ Using seeds.rb to accomplish the work of fixtures (or vice versa) would be a mis
 ### Why Factory Girl?
 Factory Girl solves the worst problem of fixtures: **maintenance**. 
 
-Tests become much easier to maintain when you can request a model instance that is always **current**. Using Factory Girl, *a model is never bound to a particular phase of your application’s development*. They are dynamically loaded from the current state of your application. Were there new Customer attributes introduced in that last merge? No problem, Factory Girl already sees them. Not so the case with a directory of fixtures.
+Tests become much easier to maintain when you can request a model instance that is always **current**. Using Factory Girl, *a model is never bound to a particular phase of your application’s development*. They are *dynamically loaded from the current state of your application*. Were there new Customer attributes introduced in that last merge? No problem, Factory Girl already sees them. Not so the case with a directory of fixtures.
 
 Factory Girl was created to create templates for valid and re-usable objects.  They allow more customization when you instantiate the objects and they aim to ensure that you have a valid object to work with. They can be used anywhere in your tests and in your before and after test hooks.
 

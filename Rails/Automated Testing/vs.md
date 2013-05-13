@@ -1,14 +1,18 @@
-Testing tool for Ruby - Created for Behaviour driven development as a response issues with test driven development
+# RSpec
 
-BDD - created as response to issued in TDD, user stories
-TDD - software devlopment process relying on a short development cycle
+#### Testing tool for Ruby - Created for Behaviour driven development as a response issues with test driven development
 
 agile testing
 
-http://en.wikipedia.org/wiki/File:Test-driven_development.PNG
+- BDD - created as response to issued in TDD, user stories
+- TDD - software devlopment process relying on a short development cycle
 
-example
+![Test driven development](http://upload.wikimedia.org/wikipedia/en/9/9c/Test-driven_development.PNG)
 
+![Behavior driven development](http://corporateminion.files.wordpress.com/2011/03/software_treeswing.jpg)
+
+example of rspec
+``` ruby
 describe Burger do
   describe "#apply_ketchup" do
     context "with ketchup" do
@@ -34,3 +38,4 @@ describe Burger do
     end
   end
 end
+```
