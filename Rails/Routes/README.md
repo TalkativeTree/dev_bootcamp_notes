@@ -25,7 +25,7 @@ resources :post
 - http://guides.rubyonrails.org/routing.html#paths-and-urls
 
 #### URL Helper
-```html-erb
+```HTML+ERB
 <%= link_to "show all posts", posts_path %>
 ```
 >posts_path returns /posts
@@ -33,4 +33,9 @@ new_post_path returns /posts/new
 edit_post_path(:id) returns /posts/:id/edit
 post_path(:id) returns /post/:id 
 
+## INBOX
 
+##### see what routes are available
+```
+rake routes
+```
