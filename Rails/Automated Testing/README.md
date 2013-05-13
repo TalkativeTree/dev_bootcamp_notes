@@ -408,6 +408,8 @@ end
 
 ## Shoulda
 
+Shoulda allows you to create unit tests and matchers in a light-weight, readable format. 
+
 add ```rspec-rails``` and ```shoulda-matchers``` to the ```Gemfile```.
 ``` ruby
 group :test do
@@ -420,6 +422,54 @@ end
 describe Post do
   it { should belong_to(:user) }
   it { should validate_presence_of(:title) }
+end
+```
+
+
+ 
+Matchers
+ 
+Matchers for Active Record test associations.
+ 
+Active Record matchers
+ 
+``` ruby
+describe Post do 
+  it {should belong_to(:user)}
+  it {should have_many(:tags).through(:taggings)}
+end
+```
+ 
+Matchers for Active Model tests valiations.
+Active Model matchers
+
+``` ruby
+describe Post do 
+  it {should validate_uniqueness of(:title)}
+end
+ 
+describe User do
+  it {should_not allow_value("blah").for(:email)}
+end
+```
+ 
+Unit Testing
+ 
+``` ruby
+class CalculatorTest < Test::Unit::TestCase
+  context "a calculator" do
+    setup do
+      @calculator = Calculator.new
+    end
+ 
+    should "add two numbers for the sum" do
+      assert_equal 4, @calculator.sum(2, 2)
+    end
+ 
+    should "multiply two numbers for the product" do
+      assert_equal 10, @calculator.product(2, 5)
+    end
+  end
 end
 ```
 
