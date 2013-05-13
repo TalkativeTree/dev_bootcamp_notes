@@ -38,7 +38,7 @@ Another commonly used attribute is data-method; this specifies the method we are
 
 Sending requests via AJAX is a breeze in Rails. All we need to do is include the following into our form_for call:
 
-```ruby
+```HTML+ERB
 <%= form_for(@comment, remote: true) do |f| %>
   <%= f.label :text %>:
   <%= f.text_field :text %><br />

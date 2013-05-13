@@ -274,13 +274,6 @@ Using seeds.rb to accomplish the work of fixtures (or vice versa) would be a mis
 
 
 
-## Why Factory Girl?
-
-
-
-
-
-
 
 ## Factory Girl
 
