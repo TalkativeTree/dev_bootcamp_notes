@@ -358,6 +358,7 @@ $ git push origin master
     - [Why is Git always asking for my password?](https://help.github.com/articles/why-is-git-always-asking-for-my-password)
 - StackOverflow
     - [Can you explain what “git reset” does in plain english?](http://stackoverflow.com/questions/2530060/can-you-explain-what-git-reset-does-in-plain-english)
+    - [Delete files from git index when they are already deleted from fs](http://stackoverflow.com/questions/6090732/delete-files-from-git-index-when-they-are-already-deleted-from-fs)
     - [Git push existing repo to a new and different remote repo server?](http://stackoverflow.com/questions/5181845/git-push-existing-repo-to-a-new-and-different-remote-repo-server)
     - [Import existing source code to github](http://stackoverflow.com/questions/4658606/import-existing-source-code-to-github)
     - [Move existing, uncommited work to a new branch in Git](http://stackoverflow.com/questions/1394797/move-existing-uncommited-work-to-a-new-branch-in-git)
@@ -367,7 +368,7 @@ $ git push origin master
 
 ## INBOX
 
-#### Delete files from git index when they are already deleted from fs
+#### [Delete files from git index when they are already deleted from fs](http://stackoverflow.com/questions/6090732/delete-files-from-git-index-when-they-are-already-deleted-from-fs)
 ```
 git ls-files --deleted -z | xargs -0 git rm
 ```
