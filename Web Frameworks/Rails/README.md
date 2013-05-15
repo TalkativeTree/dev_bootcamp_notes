@@ -12,18 +12,29 @@ rails server
 rails s
 ```
 
-### Generate a model
+## Generation
+
+### Migration
+#### Name the migration ```Add<Anything>To<Table Name>```
+```
+$ rails generate:migration AddEmailToUsers email:string
+```
+
+### Model
 ```
 $ rails generate model User name:string email:string password_hash:string
 ```
 
 
-### Generate Scaffolding
+### Scaffold
 ```
 rails generate scaffold <name> <attribute>:<type>
+rails g scaffold <name> <attribute>:<type>
 ```
 >The scaffold command magically generates all the common things needed for a new resource for you! This includes controllers, models and views. It also creates the following basic actions: create a new resource, edit a resource, show a resource, and delete a resource.
 
+
+---
 
 
 ### Link within template
