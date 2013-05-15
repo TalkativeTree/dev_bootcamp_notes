@@ -349,17 +349,25 @@ $ git push origin master
 - [Git Emmersion](http://gitimmersion.com/)
 - [Learn Git Branching](http://pcottle.github.io/learnGitBranching/)
 - GitHubHelp
-  - [Dealing with non-fast-forward errors](https://help.github.com/articles/dealing-with-non-fast-forward-errors)
-  - [Fetching a remote](https://help.github.com/articles/fetching-a-remote)
-  - [Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys) *(only to be used on your personal computer)*
-  - [Setup](https://help.github.com/articles/set-up-git)
-  - [Updating credentials from the OSX Keychain](https://help.github.com/articles/updating-credentials-from-the-osx-keychain)
-  - [Using Pull Requests](https://help.github.com/articles/using-pull-requests)
-  - [Why is Git always asking for my password?](https://help.github.com/articles/why-is-git-always-asking-for-my-password)
+    - [Dealing with non-fast-forward errors](https://help.github.com/articles/dealing-with-non-fast-forward-errors)
+    - [Fetching a remote](https://help.github.com/articles/fetching-a-remote)
+    - [Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys) *(only to be used on your personal computer)*
+    - [Setup](https://help.github.com/articles/set-up-git)
+    - [Updating credentials from the OSX Keychain](https://help.github.com/articles/updating-credentials-from-the-osx-keychain)
+    - [Using Pull Requests](https://help.github.com/articles/using-pull-requests)
+    - [Why is Git always asking for my password?](https://help.github.com/articles/why-is-git-always-asking-for-my-password)
 - StackOverflow
-  - [Can you explain what “git reset” does in plain english?](http://stackoverflow.com/questions/2530060/can-you-explain-what-git-reset-does-in-plain-english)
-  - [Git push existing repo to a new and different remote repo server?](http://stackoverflow.com/questions/5181845/git-push-existing-repo-to-a-new-and-different-remote-repo-server)
-  - [Import existing source code to github](http://stackoverflow.com/questions/4658606/import-existing-source-code-to-github)
-  - [Move existing, uncommited work to a new branch in Git](http://stackoverflow.com/questions/1394797/move-existing-uncommited-work-to-a-new-branch-in-git)
-  - [Visualizing branch topology](http://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git)
-  - [How to change a remote repository URI using Git?](http://stackoverflow.com/questions/2432764/how-to-change-a-remote-repository-uri-using-git)
+    - [Can you explain what “git reset” does in plain english?](http://stackoverflow.com/questions/2530060/can-you-explain-what-git-reset-does-in-plain-english)
+    - [Git push existing repo to a new and different remote repo server?](http://stackoverflow.com/questions/5181845/git-push-existing-repo-to-a-new-and-different-remote-repo-server)
+    - [Import existing source code to github](http://stackoverflow.com/questions/4658606/import-existing-source-code-to-github)
+    - [Move existing, uncommited work to a new branch in Git](http://stackoverflow.com/questions/1394797/move-existing-uncommited-work-to-a-new-branch-in-git)
+    - [Visualizing branch topology](http://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git)
+    - [How to change a remote repository URI using Git?](http://stackoverflow.com/questions/2432764/how-to-change-a-remote-repository-uri-using-git)
+
+
+## INBOX
+
+#### Delete files from git index when they are already deleted from fs
+```
+git ls-files --deleted -z | xargs -0 git rm
+```
