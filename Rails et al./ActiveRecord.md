@@ -105,17 +105,18 @@ $ rails generate migration add_fieldname_to_tablename fieldname:string
 - **create_table**(name, options)
     - Creates a table called name and makes the table object available to a block that can then add columns to it, following the same format as add_column. See example above. The options hash is for fragments like "DEFAULT CHARSET=UTF-8" that are appended to the create table definition.
     - ``` ruby
-class CreateUsers < ActiveRecord::Migration
-  def change
-    create_table :users do |t|
-      t.string :name
-      t.string :email
-      t.string :password
-      t.timestamps
-    end
-  end
-end
-```
+      class CreateUsers < ActiveRecord::Migration
+        def change
+          create_table :users do |t|
+            t.string :name
+            t.string :email
+            t.string :password
+            t.timestamps
+          end
+        end
+      end
+      ```
+
 - **drop_table**(name)
     - Drops the table called name.
 - **rename_table**(old_name, new_name)
@@ -133,7 +134,7 @@ end
           end
         end
         ```
-        
+
 - **rename_column**(table_name, column_name, new_column_name)
     - Renames a column but keeps the type and content.
 - **change_column**(table_name, column_name, type, options)
