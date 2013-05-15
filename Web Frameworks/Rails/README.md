@@ -6,56 +6,6 @@
 #### Create a new app
 ``` rails new <name_of_project>```
 
-##### The created directory tree 
-
-```
-.
-├── app
-│   ├── assets
-│   │   ├── images
-│   │   ├── javascripts
-│   │   └── stylesheets
-│   ├── controllers
-│   ├── helpers
-│   ├── mailers
-│   ├── models
-│   └── views
-│       └── layouts
-├── config
-│   ├── environments
-│   ├── initializers
-│   └── locales
-├── db
-├── doc
-├── lib
-│   ├── assets
-│   └── tasks
-├── log
-├── public
-├── script
-├── test
-│   ├── fixtures
-│   ├── functional
-│   ├── integration
-│   ├── performance
-│   └── unit
-├── tmp
-│   ├── cache
-│   │   └── assets
-│   │       ├── CF0
-│   │       │   └── DA0
-│   │       └── E25
-│   │           └── 4C0
-│   ├── pids
-│   ├── sessions
-│   └── sockets
-└── vendor
-    ├── assets
-    │   ├── javascripts
-    │   └── stylesheets
-    └── plugins
-```
-
 #### Launch server
 ```
 rails server
@@ -69,7 +19,9 @@ $ rails generate model User name:string email:string password_hash:string
 
 
 ### Generate Scaffolding
-```rails generate scaffold <name> <attribute>:<type>```
+```
+rails generate scaffold <name> <attribute>:<type>
+```
 >The scaffold command magically generates all the common things needed for a new resource for you! This includes controllers, models and views. It also creates the following basic actions: create a new resource, edit a resource, show a resource, and delete a resource.
 
 
@@ -277,6 +229,142 @@ $ rails generate scaffold User name:string email:string password_hash:string
 <h1>Hello, Rails!</h1>
 <%= link_to "My Blog", posts_path %>
 ```
+
+
+
+
+
+## Rails, the DBC Way
+
+
+### 1.  Create the skeleton
+```
+$ rails new app_name --database=postgresql
+```
+
+### 2.  Configure database
+
+  - sqlite by default, for postgres:
+
+#### config/database.yml 
+``` ruby
+development:
+  adapter: postgresql
+  database: app_name_dev
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: app_name_dev
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: app_name #convention is to use actual name of app (no dev)
+  pool: 5
+  timeout: 5000
+```
+
+### 3.  Config gems, add:
+
+``` ruby
+gem 'pg'
+group :development, :test do
+    gem 'rspec-rails'
+end
+```
+
+
+### 4. Initialize Spec
+```
+$ rails generate rspec:install
+```
+
+###  5. Create Migrations
+```
+$ rails generate migration CreateUsersTable
+```
+
+##### 20130514001059_create_users_table.rb
+``` ruby
+class CreateUsersTable < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+      t.string :name
+      t.string :email
+      t.string :password_hash
+    end
+  end
+end
+```
+
+##### To delete a migration, model...
+```
+$ rails d model User
+```
+
+### 6. Create Models
+
+##### app/models/user.rb
+``` ruby
+class User < ActiveRecord::Base
+  validates :email, :confirmation => true
+  validates :email, :uniqueness => true
+  validates :password_hash, :presence => true
+  has_many  :urls
+end
+```
+
+### 7. Delete the smoketest default index
+```
+public/index.html
+```
+
+### 8. Uncomment line 51 in config/routes.rb 
+``` ruby
+root :to => 'home#index' # was originally 'welcome#index'
+```
+
+### 9. Create Controller(s)
+
+##### app/controllers/home_controller.rb
+``` ruby
+class HomeController < ApplicationController
+  def index
+  end
+end
+```
+
+### 10. Create View(s)
+
+##### app/views/home/index.html.erb
+```HTML+ERB
+<p>hello there</p>
+```
+
+### 11. Start Server
+i. ```$ rails s```
+ii. [http://localhost:3000](http://localhost:3000)
+
+### 12. Write the rest of the app...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
