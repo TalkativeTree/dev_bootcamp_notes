@@ -142,14 +142,14 @@ end
     - Changes the column to a different type using the same parameters as add_column.
 - **remove_column**(table_name, column_names)
     - Removes the column listed in column_names from the table called table_name.
-``` ruby
-class RemoveUnnecessaryItemAttributes < ActiveRecord::Migration
-  def change
-    remove_column :items, :incomplete_items_count
-    remove_column :items, :completed_items_count
-  end
-end
-```
+        ``` ruby
+        class RemoveUnnecessaryItemAttributes < ActiveRecord::Migration
+          def change
+            remove_column :items, :incomplete_items_count
+            remove_column :items, :completed_items_count
+          end
+        end
+        ```
 - **add_index**(table_name, column_names, options)
     - Adds a new index with the name of the column. Other options include :name, :unique (e.g. { :name => "users_name_index", :unique => true }) and :order (e.g. { :order => {:name => :desc} }</tt>).
 - **remove_index**(table_name, :column => column_name)
