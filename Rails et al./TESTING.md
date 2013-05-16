@@ -138,11 +138,50 @@ end
 ```
 
 
+## [Testing Tips & Tricks](https://gist.github.com/ndelage/5585671)
+
+* This is a copy of ndelage's 'Testing Tips & Tricks' gist *
+
+### Run a single test
+In a large application, running all the tests at once using `rake spec` can make it difficult to check the output of the test you're working on. Especially if you have many failing or pending tests. Run a single test by running rspec:
+
+`rspec spec/models/account.rb`
+  
+You can be even more specific and run a specific example from a test file. For example, given the following tests:
+```ruby
+11: describe "#deposit!" do
+12:  it "adds value to the balance" do
+13:     expect{account.deposit!(10)}.to change{account.balance}.by(10)
+14:   end
+15:   it "returns the balance" do
+16:     account.deposit!(10).should == account.balance
+17:   end
+18: end
+```
+
+`rspec account_spect.rb:15` will only run the test `it "returns the balance"`
+
+### Run all the tests frequently and always before making any commits
+Running a specfic example file or test helps you focus, but don't forget to run the entire test suite with `rake spec` before making any commits. While the test you're might be passing, it's very possible your changes might have broken another test. __Better to get that feedback immediately__, rather than later.
+
+### Consult the log
+
+When you run any rails application (the webserver, tests or rake tasks) ouput from the running code is saved to a log file. There are log files per environment: `log/development.log`, `log/test.log` and `log/production.log`
+
+Take a moment to open up one of these log files in your editor and take a look at its contents. To keep an eye on what's new in your log files, use the *nix tool `tail`. Try running the following on your terminal:
+
+```
+tail -f log/test.log
+```
+The option -f (follow)  allows a file to be monitored. Instead of just displaying the last few lines and exiting, tail displays the lines and then monitors the file. As new lines are added to the file by another process, tail updates the display. This is particularly useful for monitoring log files.
+
+
 
 
 
 ## References
 - Github
+    - [ndelage / testing tips.md](https://gist.github.com/ndelage/5585671)
     - [jnicklas / capybara](https://github.com/jnicklas/capybara)
     - [thoughtbot / shoulda](https://github.com/thoughtbot/shoulda)
     - [thoughtbot / factory_girl](https://github.com/thoughtbot/factory_girl)
