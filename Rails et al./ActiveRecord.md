@@ -160,10 +160,60 @@ $ rails generate migration add_fieldname_to_tablename fieldname:string
     - Removes the index specified by index_name.
 
 
+## Polymorphic Associations
+
+### CREATE: ```migration_file.rb```
+``` ruby
+class CreateVotes < ActiveRecord::Migration
+  def change
+    create_table :votes do |t|
+      t.references :votable, :polymorphic => true
+      t.references :user
+      t.integer :value
+    end
+  end
+end
+```
+
+### CREATE: ```app/models/vote.rb```
+``` ruby
+class Vote < ActiveRecord::Base
+  belongs_to :votable, :polymorphic => true
+  belongs_to :user
+end
+```
+
+### UPDATE: ```app/models/user.rb```
+``` ruby
+class User < ActiveRecord::Base
+  has_many :votes
+end
+```
+
+
+### UPDATE: ```app/models/question.rb```
+``` ruby
+class Question < ActiveRecord::Base
+  has_many :votes, :as => votable
+end
+```
+
+
+
+### UPDATE: ```app/models/answer.rb```
+``` ruby
+class Answer < ActiveRecord::Base
+  has_many :votes, :as => votable
+end
+```
+
+
+
 
 ## References
 - [RoR Guides](http://guides.rubyonrails.org/)
     - [Associations](http://guides.rubyonrails.org/association_basics.html)
+        - [polymorphic-associations](http://guides.rubyonrails.org/association_basics.html#polymorphic-associations)
     - [Migrations](http://guides.rubyonrails.org/migrations.html)
     - [Query Interface](http://guides.rubyonrails.org/active_record_querying.html)
     - [Validations & Callbacks](http://guides.rubyonrails.org/active_record_validations_callbacks.html)

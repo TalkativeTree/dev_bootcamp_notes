@@ -139,6 +139,8 @@ end
 
 
 
+
+
 ## References
 - Github
     - [jnicklas / capybara](https://github.com/jnicklas/capybara)
@@ -152,3 +154,16 @@ end
 - [Rails Testing — Factory Girl](http://www.hiringthing.com/2012/08/17/rails-testing-factory-girl.html)
 - StackOverflow
     - [Factory Girl - What's the purpose?](http://stackoverflow.com/questions/5183975/factory-girl-whats-the-purpose)
+
+
+
+
+
+
+## Inbox
+
+##### after any time you do ```rake db:migrate```, perform the following
+```
+$ rake db:test:prepare
+```
+What this does is tells the testing gods the database has a new design when they create a new database during their tests
