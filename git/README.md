@@ -378,3 +378,8 @@ git commit --amend
 
 git log -p
 ```
+
+```
+git remote -a
+git remote -r
+```
