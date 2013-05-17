@@ -36,7 +36,7 @@ __Requirements__
 
 Head over to travis-ci.org and click the login button in the upper right. We'll do the other details together.
 
-#### Sample .travis.yml file for a RoR project:
+#### ```.travis.yml``` file for a RoR project:
 ```yml
 language: ruby
 rvm:

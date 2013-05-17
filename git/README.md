@@ -372,3 +372,9 @@ $ git push origin master
 ```
 git ls-files --deleted -z | xargs -0 git rm
 ```
+
+```
+git commit --amend
+
+git log -p
+```
