@@ -1,86 +1,6 @@
 # Rails
 
 
-## Important Commands
-
-#### Create a new app
-``` rails new <name_of_project>```
-
-#### Launch server
-```
-rails server
-rails s
-```
-
-## Generation
-
-### Migration
-#### ```Add<Anything>To<Table Name> [OPTIONS]```
-```
-$ rails generate:migration AddEmailToUsers email:string
-```
-
-### Model
-```
-$ rails generate model User name:string email:string password_hash:string
-```
-
-
-### Scaffold
-```
-$ rails generate scaffold <name> <attribute>:<type>
-$ rails g scaffold <name> <attribute>:<type>
-```
->The scaffold command magically generates all the common things needed for a new resource for you! This includes controllers, models and views. It also creates the following basic actions: create a new resource, edit a resource, show a resource, and delete a resource.
-
-
----
-
-
-### Link within template
-``` html+erb
-<a href='/demo/index'>index page</a>
-<%= link_to(text, target) %>
-<%= link_to('My link', '/demo/index') %>
-<%= link_to('My link', {:controller => 'demo', :action => 'index'}) %>
-<%= link_to('My link', {:action => 'index'}) %> <!-- don't need to include controller if you're staying in the current controller -->
-```
-
-## Controllers
-
-#### Redirect
-``` ruby
-def index
-  redirect_to({:action => 'index'})
-end
-```
-
-#### Render Template Syntax
-``` render
-
-# Default: template matching the action name
-
-def index
-  render(:action => 'hello') # deprecated
-end
-
-def index
-  render(:template => 'demo/hello') # explicit, but long
-end
-
-def index
-  render('demo/hello') # common
-end
-
-def index
-  render('hello') # makes the assumption of the controller
-end
-```
-
-
-
-
-
 
 
 
@@ -89,7 +9,31 @@ end
 
 #### Create Rails app (use *postgres* instead of sqlite) without tests
 ```
-rails new <app_name> --database=postresql -T
+rails new <app_name> --database=postgresql -T
+```
+
+#### Setup GEMFILE
+
+##### To allow rspec generation
+``` ruby
+group :test, :development do
+  gem 'rspec-rails'
+end
+```
+
+##### may include such files as below
+
+``` ruby
+gem 'activesupport'
+gem 'activerecord'
+gem 'bcrypt-ruby'
+gem 'pg' # unnecessary if you initialized with pg
+```
+
+##### Create database
+
+```
+rake db:create
 ```
 
 #### add RSpec
@@ -98,23 +42,17 @@ rails new <app_name> --database=postresql -T
 rails generate rspec:install
 ```
 
-#### Alter Gemfile appropriately
 
-``` ruby
-# may include such files as below
-group :development, :test do
-  gem 'rspec-rails'
-end
-
-gem 'activesupport'
-gem 'activerecord'
-gem 'bcrypt-ruby'
-gem 'pg'
-```
 
 #### Create Home Controller elements
 
 ##### app/controllers/home_controller.rb
+
+```
+$ touch app/controllers/home_controller.rb
+```
+
+###### ```app/controllers/home_controller.rb```
 
 ```ruby
 class HomeController < ApplicationController
@@ -123,7 +61,11 @@ class HomeController < ApplicationController
 end
 ```
 
-##### app/views/home/index.html.erb
+```
+$ mkdir app/views/home && touch app/views/home/index.html.erb
+```
+
+###### ```app/views/home/index.html.erb```
 ```HTML+ERB
 <p>Anything, or nothing. It's only important to have the </p>
 ```
@@ -364,6 +306,96 @@ ii. [http://localhost:3000](http://localhost:3000)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Important Commands
+
+#### Create a new app
+``` rails new <name_of_project>```
+
+#### Launch server
+```
+rails server
+rails s
+```
+
+## Generation
+
+### Migration
+#### ```Add<Anything>To<Table Name> [OPTIONS]```
+```
+$ rails generate:migration AddEmailToUsers email:string
+```
+
+### Model
+```
+$ rails generate model User name:string email:string password_hash:string
+```
+
+
+### Scaffold
+```
+$ rails generate scaffold <name> <attribute>:<type>
+$ rails g scaffold <name> <attribute>:<type>
+```
+>The scaffold command magically generates all the common things needed for a new resource for you! This includes controllers, models and views. It also creates the following basic actions: create a new resource, edit a resource, show a resource, and delete a resource.
+
+
+---
+
+
+### Link within template
+``` html+erb
+<a href='/demo/index'>index page</a>
+<%= link_to(text, target) %>
+<%= link_to('My link', '/demo/index') %>
+<%= link_to('My link', {:controller => 'demo', :action => 'index'}) %>
+<%= link_to('My link', {:action => 'index'}) %> <!-- don't need to include controller if you're staying in the current controller -->
+```
+
+## Controllers
+
+#### Redirect
+``` ruby
+def index
+  redirect_to({:action => 'index'})
+end
+```
+
+#### Render Template Syntax
+``` render
+
+# Default: template matching the action name
+
+def index
+  render(:action => 'hello') # deprecated
+end
+
+def index
+  render(:template => 'demo/hello') # explicit, but long
+end
+
+def index
+  render('demo/hello') # common
+end
+
+def index
+  render('hello') # makes the assumption of the controller
+end
+```
 
 
 
