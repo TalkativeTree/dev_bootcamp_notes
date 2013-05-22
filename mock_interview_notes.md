@@ -1,16 +1,14 @@
-# Mock Interview Thoughts
+# Interview Review
 
-## Review Topics
+## OOP
 
-### OOP
+### decoupling, examples of
 
-#### decoupling, examples of
+### POODR
 
-#### POODR
+### Law of demeter, encapsulation
 
-#### Law of demeter, encapsulation
-
-### Ruby
+## Ruby
 
 ```ruby
 class person
@@ -27,25 +25,63 @@ class person
 end
 ```
 
-#### RegEx
+## RegEx
 
 TODO
 
-### Rails
+## HTML
 
-#### Classes
+TODO
+
+## CSS
+
+TODO
+
+## jQuery
+
+### AJAX
+
+### [Events](http://api.jquery.com/category/events/)
+
+#### .click()
+
+#### event.data
+
+#### event.pageX
+
+#### event.pageY
+
+#### event.preventDefault()
+
+#### event.stopPropagation()
+
+#### .off()
+
+#### .on()
+
+#### .one()
+
+#### .ready()
+
+#### .toggle()
 
 
-##### [ActionController::Base](http://api.rubyonrails.org/classes/ActionController/Base.html)
 
-###### ```application_controller.rb```
+## Rails
+
+### Classes
+
+
+#### [ActionController::Base](http://api.rubyonrails.org/classes/ActionController/Base.html)
+
+##### ```application_controller.rb```
 
 ```ruby
 class ApplicationController < ActionController::Base
 end
 ```
 
-###### ```users_controller.rb```
+##### ```users_controller.rb```
 
 ```ruby
 class UsersController < ApplicationController
@@ -53,7 +89,7 @@ end
 ```
 
 
-##### [ActiveModel::Validator](http://api.rubyonrails.org/classes/ActiveModel/Validator.html)
+#### [ActiveModel::Validator](http://api.rubyonrails.org/classes/ActiveModel/Validator.html)
 
 Custom validators are classes that extend ActiveModel::Validator. These classes must implement a validate method which takes a record as an argument and performs the validation on it. The custom validator is called using the validates_with method.
 
@@ -72,7 +108,7 @@ class Person
 end
 ```
 
-##### [ActiveRecord::Base](http://api.rubyonrails.org/classes/ActiveRecord/Base.html)
+#### [ActiveRecord::Base](http://api.rubyonrails.org/classes/ActiveRecord/Base.html)
 
 ```ruby
 class User < ActiveRecord::Base
@@ -81,17 +117,17 @@ class User < ActiveRecord::Base
 end
 ```
 
-##### [ActiveRecord::Calculations.pluck](http://apidock.com/rails/ActiveRecord/Calculations/pluck)
+#### [ActiveRecord::Calculations.pluck](http://apidock.com/rails/ActiveRecord/Calculations/pluck)
 
 This method is designed to perform select by a single column as direct SQL query Returns Array with values of the specified column name The values has same data type as column.
 
 ```ruby
-Person.pluck(:id) # SELECT people.id FROM people
-Person.uniq.pluck(:role) # SELECT DISTINCT role FROM people
+erson.pluck(:id) # SELECT people.id FROM people
+erson.uniq.pluck(:role) # SELECT DISTINCT role FROM people
 Person.where(:confirmed => true).limit(5).pluck(:id)
 ```
 
-##### [ActiveRecord::Migration](http://api.rubyonrails.org/classes/ActiveRecord/Migration.html)
+#### [ActiveRecord::Migration](http://api.rubyonrails.org/classes/ActiveRecord/Migration.html)
 
 ```ruby
 class CreateUsers < ActiveRecord::Migration
@@ -106,11 +142,11 @@ end
 
 
 
-#### Associations
+### Associations
 
 TODO
 
-##### Polymorphic
+#### Polymorphic
 
 e.g. users have posts, posts have posts
 
@@ -118,15 +154,15 @@ TODO
 
 
 
-#### attribute accessors
+### attribute accessors
 
 DEFINE
 
-#### difference betwen sinatra & rails
+### difference betwen sinatra & rails
 
 EXPLAIN
 
-#### rails helpers, the ones given to us
+### rails helpers, the ones given to us
 
 - form helpers
 - inheritence
@@ -135,29 +171,29 @@ EXPLAIN
 
 TODO
 
-### SQL (Structured Query Language)
+## SQL (Structured Query Language)
 
-#### Pros
+### Pros
 
 - flexible
 - universal
 - few commands to learn
 
-#### Cons
+### Cons
 
 - requires detailed knowledge of db
 - can provide misleading results
 
-#### Basic Components
+### Basic Components
 
-##### Required
+#### Required
 
 ```sql
 SELECT column
 FROM table
 ```
 
-##### With Optional
+#### With Optional
 
 ```sql
 SELECT schema.table.column
@@ -167,9 +203,9 @@ ORDER BY [columns]
 ;
 ```
 
-##### Basic Structural Elements
+#### Basic Structural Elements
 
-###### SELECT
+##### SELECT
 
 defines what is to be returned
 
@@ -179,11 +215,11 @@ defines what is to be returned
 - pre-defined functions
 - Group Functions: COUNT, SUM, MAX, MIN, AVG
 
-###### FROM
+##### FROM
 
 defines the table(s) or view(s) used by SELEC or WHERE
 
-###### Examples
+##### Examples
 
 ```sql
 SELECT state_name, state_abbr
@@ -195,7 +231,7 @@ SELECT *
 FROM agencies
 ```
 
-###### WHERE
+##### WHERE
 
 - defines what records are to be included in the query
 - uses conditional operators (e.g. =, >=, != ...)
@@ -203,7 +239,7 @@ FROM agencies
 - strings contained within **single quotes**
 
 
-###### Examples
+##### Examples
 
 ```sql
 SELECT state_name, state_population
@@ -234,7 +270,7 @@ AND (values_gt_pri_std > 0
 OR values_gt_sec_std > 0)
 ```
 
-###### ORDER BY
+##### ORDER BY
 
 - defines how the records are to be sorted
 - must be in the ```SELECT``` statement to be ```ORDER BY```
@@ -252,7 +288,7 @@ WHERE lut_land_use_type = ‘MOBILE’
 ORDER BY cc_cn_stt_state_code DESC
 ```
 
-###### GROUP BY
+##### GROUP BY
 
 - Performs common mathematical operations on a group of records
 - defines what constitues a group with ```GROUP BY```
@@ -264,7 +300,6 @@ FROM monitors
 GROUP BY si_si_id
 ```
 
-
 ```sql
 SELECT AVG(max_sample_value)
 FROM summary_maximums
@@ -273,9 +308,9 @@ WHERE max_level <= 3
 GROUP BY ans_ans_id
 ```
 
-##### Selecting from Multiple Tables
+#### Selecting from Multiple Tables
 
-###### Joining Tables with Primary & Foreign Keys
+##### Joining Tables with Primary & Foreign Keys
 
 cartesion join / simple join
 
@@ -292,7 +327,7 @@ FROM monitors, parameters
 WHERE pa_parameter_code = parameter_code
 ```
 
-###### Aliases
+##### Aliases
 
 Why
 
@@ -306,34 +341,34 @@ FROM monitors mo, parameters pa
 WHERE mo.pa_parameter_code = pa.parameter_code
 ```
 
-### RSpec
+## RSpec
 
 TODO
 
 
-## Whiteboarding
+# Whiteboarding
 
 1. Be able to create from scratch any of the above code.
 
-## Books
+# Books
 
-### [POODR: Practical Object-Oriented Design in Ruby](https://github.com/skmetz/poodr)
-### ReWork
-### Professional JavaScript for Web Developers
-### Thinking in Systems
-### Zen Mind, Beginners Mind
-### Design Patterns
-### The Pragmatic Programmer
-### Code Complete
-
-
-## Passion
+## [POODR: Practical Object-Oriented Design in Ruby](https://github.com/skmetz/poodr)
+## ReWork
+## Professional JavaScript for Web Developers
+## Thinking in Systems
+## Zen Mind, Beginners Mind
+## Design Patterns
+## The Pragmatic Programmer
+## Code Complete
 
 
-## Lower water line (i.e. iceberg)
+# Passion
+
+
+# Lower water line (i.e. iceberg)
 
 
 
-## References
+# References
 
 - [epa.gov: SQL Basics](http://www.epa.gov/ttn/airs/airsaqs/training/SQL%20Basics.pdf)
