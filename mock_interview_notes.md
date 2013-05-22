@@ -41,36 +41,109 @@ TODO
 
 ### AJAX
 
+TODO
+
+### [Manipulation](http://api.jquery.com/category/manipulation/)
+
+#### .addClass()
+
+TODO
+
+#### .append()
+
+TODO
+
+#### .clone()
+
+TODO
+
+#### .css()
+
+TODO
+
+#### .empty()
+
+TODO
+
+#### .html()
+
+TODO
+
+#### .text()
+
+TODO
+
+#### .val()
+
+TODO
+
 ### [Events](http://api.jquery.com/category/events/)
 
 #### .click()
 
+TODO
+
 #### event.data
+
+TODO
 
 #### event.pageX
 
+TODO
+
 #### event.pageY
+
+TODO
 
 #### event.preventDefault()
 
+TODO
+
 #### event.stopPropagation()
+
+TODO
 
 #### .off()
 
+TODO
+
 #### .on()
+
+TODO
 
 #### .one()
 
+TODO
+
 #### .ready()
+
+TODO
 
 #### .toggle()
 
+TODO
 
+### [jQuery UI](http://api.jqueryui.com/)
+
+#### [Draggable](http://jqueryui.com/draggable/)
+
+TODO
+
+#### Droppable
+
+TODO
+
+#### Selectable
+
+TODO
+
+#### Sortable
+
+TODO
 
 ## Rails
 
 ### Classes
-
 
 #### [ActionController::Base](http://api.rubyonrails.org/classes/ActionController/Base.html)
 
@@ -139,9 +212,6 @@ class CreateUsers < ActiveRecord::Migration
 end
 ```
 
-
-
-
 ### Associations
 
 TODO
@@ -151,8 +221,6 @@ TODO
 e.g. users have posts, posts have posts
 
 TODO
-
-
 
 ### attribute accessors
 
