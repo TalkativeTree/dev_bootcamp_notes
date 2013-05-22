@@ -70,8 +70,21 @@ $ mkdir app/views/home && touch app/views/home/index.html.erb
 <p>Anything, or nothing. It's only important to have the </p>
 ```
 
+#### Delete ```public/index.html```
 
+```
+$ rm public/index.html
+```
 
+#### create route for home
+
+##### ```config/routes.rb```
+
+```ruby
+WeddingRsvp::Application.routes.draw do
+  root :to => 'home#index'
+end
+```
 
 
 
