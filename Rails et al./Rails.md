@@ -9,7 +9,7 @@
 
 #### Create Rails app (use *postgres* instead of sqlite) without tests
 ```
-rails new <app_name> --database=postgresql -T
+rails new <app_name> -d postgresql -T
 ```
 
 #### Setup GEMFILE

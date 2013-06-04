@@ -414,29 +414,36 @@ WHERE mo.pa_parameter_code = pa.parameter_code
 TODO
 
 
-# Whiteboarding
+## Whiteboarding
 
 1. Be able to create from scratch any of the above code.
 
-# Books
+## Books
 
-## [POODR: Practical Object-Oriented Design in Ruby](https://github.com/skmetz/poodr)
-## ReWork
-## Professional JavaScript for Web Developers
-## Thinking in Systems
-## Zen Mind, Beginners Mind
-## Design Patterns
-## The Pragmatic Programmer
-## Code Complete
-
-
-# Passion
+### [POODR: Practical Object-Oriented Design in Ruby](https://github.com/skmetz/poodr)
+### ReWork
+### Professional JavaScript for Web Developers
+### Thinking in Systems
+### Zen Mind, Beginners Mind
+### Design Patterns
+### The Pragmatic Programmer
+### Code Complete
 
 
-# Lower water line (i.e. iceberg)
+## Passion
+
+
+## Lower water line (i.e. iceberg)
 
 
 
-# References
+## References
 
 - [epa.gov: SQL Basics](http://www.epa.gov/ttn/airs/airsaqs/training/SQL%20Basics.pdf)
+
+
+
+## INBOX
+
+form_for
+fields_for
