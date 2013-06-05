@@ -2,17 +2,22 @@
 ---
 
 ## Constructor & Prototypes
+
+### Constructor
 ``` js
 function Animal (name, length) {
   this.name = name;
   this.length = length;
 }
- 
+```
+
+### Prototype
+ ```
 Animal.prototype.identify = function() {
   return "I am a " + this.name + " with " + this.length + " legs."
 }
 ```
- 
+
 ## Object Literal
 ``` js
 var Zoo = {
@@ -37,17 +42,17 @@ var Zoo = {
     return collect;
   }
 }
-``` 
+```
 
 ## Driver Code
-``` js 
-function assert(test, message) {  
+``` js
+function assert(test, message) {
   if (!test) {
     throw "ERROR: " + message;
   }
   return true;
 }
- 
+
 var animals = [
 new Animal("Human", 2),
 new Animal("Monkey", 2),
@@ -56,9 +61,9 @@ new Animal("Horse", 4),
 new Animal("Cow", 4),
 new Animal("Centipede", 100)
 ];
- 
+
 Zoo.init(animals);
- 
+
 assert(
   Zoo.bipeds().length === 3, "the Zoo should have 3 bipeds"
   );
