@@ -4,6 +4,9 @@
 ## Constructor & Prototypes
 
 ### Constructor
+
+Used to make a class from which to build instances.
+
 ``` js
 function Animal (name, length) {
   this.name = name;
@@ -12,6 +15,9 @@ function Animal (name, length) {
 ```
 
 ### Prototype
+
+Creates a class-like method.
+
  ```
 Animal.prototype.identify = function() {
   return "I am a " + this.name + " with " + this.length + " legs."
@@ -19,6 +25,9 @@ Animal.prototype.identify = function() {
 ```
 
 ## Object Literal
+
+Creates a class object which can never create instances.
+
 ``` js
 var Zoo = {
   collection : [],
