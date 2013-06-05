@@ -35,6 +35,8 @@ var animals = [
   new Animal("Cow", 4),
   new Animal("Centipede", 100)
 ];
+
+animals[2].name // "Kangaroo"
 ```
 
 ### Prototype
@@ -48,6 +50,12 @@ Animal.prototype.identify = function() {
 ```
 
 > [The prototype object is meant to be used on constructor functions, basically functions that will be called using the new operator to create new object instances. Functions in JavaScript are first-class objects, which means you can add members to them and treat them just like ordinary objects:](http://stackoverflow.com/questions/1592384/adding-prototype-to-object-literal)
+
+#### Example Code
+```js
+animals[0].identify() // "I am a Human with 2 legs."
+animals[0].identify === animals[5].identify // true, only one implementation of the identify() function should exist
+```
 
 ## Object Literal
 
@@ -86,7 +94,4 @@ Zoo.init(animals);
 ```js
 Zoo.bipeds().length // 3
 Zoo.quadrupeds().length // 2
-animals[0].identify() // "I am a Human with 2 legs."
-animals[2].name // "Kangaroo"
-animals[0].identify === animals[5].identify // true, only one implementation of the identify() function should exist
 ```
