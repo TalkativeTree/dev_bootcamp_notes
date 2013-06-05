@@ -89,9 +89,7 @@ var Zoo = {
 #### Example Code
 ```js
 Zoo.init(animals);
-```
 
-```js
 Zoo.bipeds().length // 3
 Zoo.quadrupeds().length // 2
 ```
