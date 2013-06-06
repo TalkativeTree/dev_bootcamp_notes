@@ -1,5 +1,7 @@
 # [The CoMPuTaH Web App Architecture](https://gist.github.com/quackingduck/a2d7c25baabe8d6fffd7)
 
+*The original repo of this can be found* **[here](https://gist.github.com/quackingduck/a2d7c25baabe8d6fffd7)**
+
 When working on a web app using a framework like Rails or Backbone I split the kind of components I write into five broad groups:
 
 * Controllers
