@@ -1,6 +1,6 @@
 # git-sh shortcuts
 
-```
+```bash
 #!/bin/bash
 # These are the standard set of aliases enabled by default in all
 # git-sh sessions. Aliases defined in the gitconfig [alias] section override
